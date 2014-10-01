@@ -1,0 +1,16 @@
+{
+  "name": "notifications",
+  "version": "0.0.0",
+  "description": "Notification Handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Pitt <rpitt@centiq.co.uk>",
+  "license": "GPL",
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "debug": "^2.0.0",
+    "express": "^4.9.5"
+  }
+}
