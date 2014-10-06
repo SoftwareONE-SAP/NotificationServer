@@ -6,24 +6,35 @@ var Notifications = require("../../");
 /**
  * Create a new Notification Handler
  */
-var core = new Notifications();
+var notifications = new Notifications();
 
 /**
- * Register the input handlers
+ * Register a http interface listening on a specific port
  */
-core.registerInput(new Notifications.inputs.http());
+notifications.registerInput(new Notifications.inputs.http({
+	port : 8090
+}));
+
+notifications.registerInput(new Notifications.inputs.socket({
+	port : 8091
+}));
 
 /**
- * Register the processors
+ * Register a timestamp processor
  */
-core.registerProcessor(new Notifications.processors.timestamp());
+notifications.registerProcessor(new Notifications.processors.timestamp());
 
 /**
- * Register the output handlers
+ * Register the sanitize processor
  */
-core.registerOutput(new Notifications.outputs.console());
+notifications.registerProcessor(new Notifications.processors.sanitize());
 
 /**
- * Start the core tasks
+ * Register the console output handler
  */
-core.start();
+notifications.registerOutput(new Notifications.outputs.console());
+
+/**
+ * Start the notifications system
+ */
+notifications.start();
