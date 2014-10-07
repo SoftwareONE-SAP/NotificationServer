@@ -15,18 +15,17 @@ notifications.registerInput(new Notifications.inputs.http({
 	port : 8090
 }));
 
+/**
+ * Add the socket input endpoint for local json payloads
+ */
 notifications.registerInput(new Notifications.inputs.socket({
 	port : 8091
 }));
 
 /**
- * Register a timestamp processor
+ * Register the processors
  */
 notifications.registerProcessor(new Notifications.processors.timestamp());
-
-/**
- * Register the sanitize processor
- */
 notifications.registerProcessor(new Notifications.processors.sanitize());
 
 /**
