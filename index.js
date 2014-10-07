@@ -6,7 +6,7 @@
  * Import the system core.
  * @type {Core}
  */
-exports = module.exports = require("./lib/core.js");
+exports = module.exports = require("./lib/router.js");
 
 /**
  * Stock Innputs

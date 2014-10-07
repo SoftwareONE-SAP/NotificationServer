@@ -1,7 +1,9 @@
 /**
  * Load the system up
  */
-var Notifications = require("../../");
+var Notifications 		= require("../../"),
+	SirportlyOutput 	= require("./outputs/sirportly.js"),
+	AccountProcessor 	= require("./processors/account.js");
 
 /**
  * Create a new Notification Handler
@@ -27,8 +29,16 @@ notifications.registerInput(new Notifications.inputs.socket({
  */
 notifications.registerProcessor(new Notifications.processors.timestamp());
 notifications.registerProcessor(new Notifications.processors.sanitize());
+notifications.registerProcessor(new AccountProcessor());
 
-
+/**
+ * Register the console output handler
+ */
+notifications.registerOutput(new SirportlyOutput({
+	uri 	: "http://dev-support.centiq.co.uk:8090",
+	token  	: "e07ea360-5d45-ec98-e336-180496bd7b88",
+	secret 	: "jw4yy5nehr6onzv2amqerv50f3qcy1v9rvox2smsdzcjjd2udd"
+}));
 
 /**
  * Register the console output handler
