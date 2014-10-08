@@ -61,7 +61,7 @@ AccountProcessor.prototype.process = function(notification, callback) {
 				return callback(err);
 
 			notification.addProperty("account", results[0]);
-			callback();
+			callback(); 
 		});
 	}
 	else

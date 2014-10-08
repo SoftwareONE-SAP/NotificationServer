@@ -28,7 +28,7 @@ notifications.registerOutput(new SirportlyOutput({
 /**
  * basic console output
  */
-notifications.registerOutput(new Notifications.outputs.console());
+//notifications.registerOutput(new Notifications.outputs.console());
 
 /**
  * Start the notifications system
